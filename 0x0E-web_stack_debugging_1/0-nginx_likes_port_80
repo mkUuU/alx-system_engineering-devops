@@ -1,0 +1,10 @@
+#!/bin#!/urs/bin/evn bash
+#configure an Nginx configuration file
+
+#remove the Nginx default configuration file
+
+rm /etc/nginx/sites-enabled/default
+#configure the Nginx to listen to port 80 for all the active IPv4 IPs
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+#restart the Nginx service
+service nginx restart
