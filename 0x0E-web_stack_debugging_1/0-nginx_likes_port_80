@@ -1,10 +1,7 @@
-#!/bin#!/urs/bin/evn bash
-#configure an Nginx configuration file
-
-#remove the Nginx default configuration file
-
-rm /etc/nginx/sites-enabled/default
-#configure the Nginx to listen to port 80 for all the active IPv4 IPs
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-#restart the Nginx service
-service nginx restart
+#!/usr/bin/env bash
+# debugging nginx port 80
+# How I solved it: delete the existing ../sites-enabled/default and replace it with a copy of
+# ../sites-available/default. You do that by creating a symbolic link. 
+# NB: The flag -s creates a symbolic link, -f deletes the existing file and replaces it
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
