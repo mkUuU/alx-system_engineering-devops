@@ -13,7 +13,7 @@ global
         crt-base /etc/ssl/private
 
         # See: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.3&config=intermediate
-        ssl-default-bind-ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
+        ssl-default-bind-cipher ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCrG2TiNTqu53XTRB5SUH6AcWZost+f15BvLeJ8BRDwTjgL4+ZDMGJurDdEFMeuh1/+aF/0W+/OcLhdiEt8Y9i3BhCYgenQip+7Sb4cqwwWQJpYd9IWDkTwypO/XSh8tIh8+CGTUSTqqfrAzMx5T0Pj/l3a4QGr/JP79mrX97xoQfHooisf7aCfBRs2MiUAnuR5G0kg4MWil2+o7a4cEm1dDrMW3nygW+wV4aaL32mTS+GK8sifya7kPeX3BmblHmUr9TTvhfVhN/G31FlrpaNGKmyKBLdiBi2Net1bhIP6W9jsw+5i3WASC64bO8tO1+ChM/uGnSoybT7r4L9HWi/TAH+eu2oirsSggmHpFQv106dzkHXyG0sawlFvLKcwz+b94iwSwseVsgiZviXAo1OUxvkGKzqw8ZBi6rN+qCK7MvVFkNmilxbeM8tMrJvxtd4DOmEVdFGL57LAFc+BKa0crE/W0XR7+VQXGqTAd5UR9+O1VTk3MdKyFgqikwl2/qg9guzKVjgD62N2jQvZXsBrlcLt5nEMgKCRK5MVqEg3p9XoSqdwXJuhP9LmJL0UI8/yFgssZdeDJ4R9F5rwY3ap/c3QxBmoW/DMScYk/tz890hfQWH/nKrFDP82fKIvLU8OU58PaPtXLYfPBBAG/VoeDfXsHw4joHIEJEwMJ1StJQ== john@oscar-hp-probook-440-g1
         ssl-default-bind-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
         ssl-default-bind-options ssl-min-ver TLSv1.2 no-tls-tickets
 
@@ -36,5 +36,5 @@ listen http-in
         bind :80
         bind :443 ssl crt /etc/certs/fullchain.pem
         balance roundrobin
-        server 342961-web-01 100.26.168.106:80 check
-        server 342961-web-02 54.236.16.171:80 check
+        server 439330-web-01 54.144.134.163 check
+        server 439330-web-02 52.205.222.141 check
